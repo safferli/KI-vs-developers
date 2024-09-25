@@ -6,17 +6,22 @@ library(tidyverse)
 
 # How much AI tools are improving developer productivity today
 dta <- tribble(
-  ~role, ~answer, ~percentage,
-  "manager", "not at all", 30,
-  "manager", "slightly", 32,
-  "manager", "moderately", 22, 
-  "manager", "very", 11, 
-  "manager", "extremely", 5,
-  "dev", "not at all", 0,
-  "dev", "slightly", 0,
-  "dev", "moderately", 35, 
-  "dev", "very", 26, 
-  "dev", "extremely", 0
+  ~role, ~horizon, ~answer, ~percentage,
+  "manager", "today", "not at all", 0,
+  "manager", "today", "slightly", 0,
+  "manager", "today", "moderately", 0,
+  "manager", "today", "very", 0,
+  "manager", "today", "extremely", 0,
+  "dev", "today", "not at all", 30,
+  "dev", "today", "slightly", 32,
+  "dev", "today", "moderately", 22, 
+  "dev", "today", "very", 11, 
+  "dev", "today","extremely", 5,
+  "dev", "in two years", "not at all", 12,
+  "dev", "in two years", "slightly", 27,
+  "dev", "in two years", "moderately", 35, 
+  "dev", "in two years", "very", 20, 
+  "dev", "in two years", "extremely", 6
 )
 
 label.breaks <- pretty(c(-max(dta$percentage), max(dta$percentage)))
